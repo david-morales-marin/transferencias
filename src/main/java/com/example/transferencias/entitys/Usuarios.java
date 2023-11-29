@@ -16,7 +16,7 @@ public class Usuarios implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @OneToOne(mappedBy = "usuarios")
+    @OneToOne(mappedBy = "usuario")
     @JsonIgnore
     private Tarjetas tarjeta;
 
