@@ -3,7 +3,7 @@ package com.example.transferencias.entitys;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -13,12 +13,13 @@ import java.util.UUID;
 public class Usuarios implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @OneToOne(mappedBy = "usuarios")
     @JsonIgnore
     private Tarjetas tarjeta;
+
     @Column(name = "nombre_usuario" , nullable = false)
     private String nombreUsuario;
 

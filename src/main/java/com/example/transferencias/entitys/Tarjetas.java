@@ -2,7 +2,8 @@ package com.example.transferencias.entitys;
 
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
+
+import org.hibernate.annotations.GenericGenerator;
 
 import java.io.Serializable;
 import java.util.Date;

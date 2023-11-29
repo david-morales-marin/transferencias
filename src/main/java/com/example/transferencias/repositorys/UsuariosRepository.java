@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.rmi.server.UID;
+import java.util.UUID;
 
 @Repository
-public interface UsuariosRepository extends JpaRepository<Usuarios , UID> {
+public interface UsuariosRepository extends JpaRepository<Usuarios , UUID> {
 }
