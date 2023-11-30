@@ -26,4 +26,45 @@ public class Usuarios implements Serializable {
     @Column(name = "clave_usuario")
     private String claveUsuario;
 
+    public Usuarios() {
+    }
+
+    public Usuarios(UUID id, Tarjetas tarjeta, String nombreUsuario, String claveUsuario) {
+        this.id = id;
+        this.tarjeta = tarjeta;
+        this.nombreUsuario = nombreUsuario;
+        this.claveUsuario = claveUsuario;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public Tarjetas getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(Tarjetas tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getClaveUsuario() {
+        return claveUsuario;
+    }
+
+    public void setClaveUsuario(String claveUsuario) {
+        this.claveUsuario = claveUsuario;
+    }
 }
