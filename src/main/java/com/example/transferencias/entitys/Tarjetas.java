@@ -31,7 +31,7 @@ public class Tarjetas implements Serializable {
     private String tipoCuenta;
 
     @Column(name = "numero_cuenta")
-    private long numeroCuenta;
+    private Long numeroCuenta;
 
     @Column(name = "fecha_vencimiento")
     private Date fechaVencimiento;
@@ -39,10 +39,13 @@ public class Tarjetas implements Serializable {
     @Column(name = "recargar_saldo")
     private double recargarSaldo;
 
+    @Column(name = "transferir")
+    private double transferir;
+
     public Tarjetas() {
     }
 
-    public Tarjetas(UUID id, @NonNull Usuarios usuario, double saldoCuenta, String tipoCuenta, long numeroCuenta, Date fechaVencimiento, double recargarSaldo) {
+    public Tarjetas(UUID id, @NonNull Usuarios usuario, double saldoCuenta, String tipoCuenta, Long numeroCuenta, Date fechaVencimiento, double recargarSaldo, double transferir) {
         this.id = id;
         this.usuario = usuario;
         this.saldoCuenta = saldoCuenta;
@@ -50,6 +53,7 @@ public class Tarjetas implements Serializable {
         this.numeroCuenta = numeroCuenta;
         this.fechaVencimiento = fechaVencimiento;
         this.recargarSaldo = recargarSaldo;
+        this.transferir = transferir;
     }
 
     public UUID getId() {
@@ -85,7 +89,7 @@ public class Tarjetas implements Serializable {
         this.tipoCuenta = tipoCuenta;
     }
 
-    public long getNumeroCuenta() {
+    public Long getNumeroCuenta() {
         return numeroCuenta;
     }
 
@@ -107,5 +111,13 @@ public class Tarjetas implements Serializable {
 
     public void setRecargarSaldo(double recargarSaldo) {
         this.recargarSaldo = recargarSaldo;
+    }
+
+    public double getTransferir() {
+        return transferir;
+    }
+
+    public void setTransferir(double transferir) {
+        this.transferir = transferir;
     }
 }

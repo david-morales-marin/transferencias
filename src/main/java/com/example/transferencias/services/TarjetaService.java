@@ -5,6 +5,7 @@ import com.example.transferencias.repositorys.TarjetasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -19,7 +20,7 @@ public class TarjetaService {
         this.tarjetasRepository = tarjetasRepository;
     }
 
-    public Tarjetas createTargeta(Tarjetas tarjetas){
+    public Tarjetas createTargeta(UUID  usuario_id, Tarjetas tarjetas){
         return this.tarjetasRepository.save(tarjetas);
     }
 
@@ -27,15 +28,9 @@ public class TarjetaService {
         return this.tarjetasRepository.findById(id);
     }
 
-    /*
-    public Project putProject(Project project, UUID id){
-
-        Project project1 = projectRepository.findById(id).get();
-        project1.setName(project.getName());
-
-        return this.projectRepository.save(project1);
-
-    }*/
+    public List<Tarjetas> getAllTarjetas(){
+        return this.tarjetasRepository.findAll();
+    }
 
     public Tarjetas transferenciasTarjetas(Tarjetas tarjetas, UUID id){
 
